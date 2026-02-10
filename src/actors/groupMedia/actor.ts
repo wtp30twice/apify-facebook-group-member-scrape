@@ -39,7 +39,8 @@ export const run = async (crawlerConfigOverrides?: PlaywrightCrawlerOptions): Pr
       routes,
       routeHandlers: ({ input }) => createHandlers(input),
       routeHandlerWrappers: ({ input }) => [
-        logLevelHandlerWrapper('info'),
+   logLevelHandlerWrapper(4),
+
 
         closePopupsRouterWrapper,
       ],
