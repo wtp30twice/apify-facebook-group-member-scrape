@@ -20,6 +20,7 @@ export type FbGroupMediaCustomActorInput = {
 /** Shape of the data passed to the actor from Apify */
 export type FbGroupMediaActorInput = FbGroupMediaCustomActorInput &
   Omit<AllActorInputs, 'ignoreSslErrors'>;
+   export type FbGroupMemberActorInput = FbGroupMediaActorInput;
 
 const customActorInput = {
   /** No custom fields currently */
