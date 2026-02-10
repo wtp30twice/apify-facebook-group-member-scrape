@@ -1,12 +1,12 @@
 import Joi from 'joi';
 import { allActorInputValidationFields } from 'crawlee-one';
+import type { FbGroupMemberActorInput } from './config';
 
-import type { FbGroupMediaActorInput } from './config';
-
-const inputValidationSchema = Joi.object<FbGroupMediaActorInput>({
+const inputValidationSchema = Joi.object<FbGroupMemberActorInput>({
   ...allActorInputValidationFields,
-} satisfies Record<keyof FbGroupMediaActorInput, Joi.Schema>);
+  maxMembers: Joi.number().integer().min(0).allow(null).optional(),
+} satisfies Record<keyof FbGroupMemberActorInput, Joi.Schema>);
 
-export const validateInput = (input: FbGroupMediaActorInput | null) => {
+export const validateInput = (input: FbGroupMemberActorInput | null) => {
   Joi.assert(input, inputValidationSchema);
 };
