@@ -46,6 +46,10 @@ allActorInputs.maxRequestRetries.default = 5;
 allActorInputs.maxRequestRetries.prefill = 5;
 allActorInputs.maxConcurrency.default = 5;
 allActorInputs.maxConcurrency.prefill = 5;
+if (allActorInputs.logLevel) {
+  allActorInputs.logLevel.default = 'info';
+  allActorInputs.logLevel.prefill = 'info';
+}
 
 const inputSchema = createActorInputSchema<
   ActorInputSchema<Record<keyof FbGroupMediaActorInput, Field>>
