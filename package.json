@@ -1,5 +1,5 @@
 {
-  "name": "apify-actor-facebook",
+  "name": "facebook-group-members-scraper",
   "version": "1.0.0",
   "private": true,
   "description": "Apify Actors that scrape Facebook website",
@@ -32,7 +32,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "npm run start:dev",
+    "start": "npm run start:prod -- groupMedia",
     "start:prod": "node dist/cjs/cli/index.js start-prod",
     "start:prod__example": "echo 'npm run start:prod -- -- groupMedia -h'",
     "start:dev": "ts-node ./src/cli start-dev",
